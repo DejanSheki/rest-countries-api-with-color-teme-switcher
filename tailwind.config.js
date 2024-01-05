@@ -14,8 +14,9 @@ export default {
         'darkGray': 'hsl(0, 0%, 52%)',
       },
       backgroundColor: {
-
-      }
+        'veryDarkBlueBg': 'hsl(207, 26%, 17%)',
+        'veryLightGrayBg': 'hsl(0, 0%, 98%)'
+      },
     },
   },
   plugins: [],
