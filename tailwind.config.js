@@ -17,9 +17,6 @@ export default {
         'veryDarkBlueBg': 'hsl(207, 26%, 17%)',
         'veryLightGrayBg': 'hsl(0, 0%, 98%)'
       },
-      boxShadow: {
-        'dark': '0+0+5px hsl(0, 0%, 52%)',
-      }
     },
   },
   plugins: [],
