@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import CountryList from "./components/Countries";
+import CountryList from "./components/CountryList";
 import Search from "./components/Search";
 import "./App.css";
 
@@ -13,12 +13,15 @@ function App() {
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
+
+  const searchedCountries = data.filter((country) => {
+    return country.name.toLowerCase().includes(searchTerm.toLowerCase());
+  })
   return (
     <>
       <Navbar />
       <Search onSearch={handleChange} />
-      <p>Searching for: {searchTerm}</p>
-      <CountryList countries={data} />
+      <CountryList countries={searchedCountries} />
     </>
   );
 }
