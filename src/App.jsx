@@ -1,11 +1,13 @@
-import "./App.css";
 import { useState } from "react";
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import "./App.css";
 import data from "./data.json";
 
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import CountryList from "./components/CountryList";
-import Search from "./components/Search";
+import CountryDetails from "./components/CountryDetails";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -24,7 +26,7 @@ function App() {
   });
 
   return (
-    <>
+    <Router>
       <Navbar />
       <Header
         onSearch={handleChange}
@@ -32,8 +34,9 @@ function App() {
         selectedRegion={selectedRegion}
         handleRegionChange={handleRegionChange}
       />
+      <CountryDetails />
       <CountryList countries={searchedCountries} />
-    </>
+    </Router>
   );
 }
 
