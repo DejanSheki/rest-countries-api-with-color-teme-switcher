@@ -3,7 +3,7 @@ import React from "react";
 const CountryList = (countriesData) => {
   return (
     <>
-      <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-10 md:gap-16 px-6 sm:px-12 lg:px-20 bg-veryLightGrayBg dark:bg-veryDarkBlueBg">
+      <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-10 md:gap-16 px-6 sm:px-12 lg:px-20 pb-20 bg-veryLightGrayBg dark:bg-veryDarkBlueBg">
         {countriesData.countries.map((country) => {
           return (
             <article
@@ -11,7 +11,7 @@ const CountryList = (countriesData) => {
               key={country.numericCode}
             >
               <img
-                className="block w-full rounded-t-md object-cover h-40"
+                className="block w-full rounded-t-md object-cover h-[23vh] 2xl:h-[25vh]"
                 src={country.flags.svg}
               />
               <div className="pt-7 px-6 pb-9">

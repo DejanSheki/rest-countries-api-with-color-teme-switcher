@@ -5,6 +5,7 @@ import data from "./data.json";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import CountryList from "./components/CountryList";
+import Search from "./components/Search";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -27,10 +28,9 @@ function App() {
       <Navbar />
       <Header
         onSearch={handleChange}
-        valsearchValueue={searchTerm}
+        searchValue={searchTerm}
         selectedRegion={selectedRegion}
         handleRegionChange={handleRegionChange}
-
       />
       <CountryList countries={searchedCountries} />
     </>
