@@ -3,9 +3,7 @@ import { useState } from "react";
 import Header from "./Header";
 import CountryList from "./CountryList";
 
-import data from "../data.json";
-
-const MainPage = () => {
+const MainPage = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
 

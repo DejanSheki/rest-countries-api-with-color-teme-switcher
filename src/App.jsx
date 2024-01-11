@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import "./App.css";
+import data from './data.json';
 
 import Navbar from "./components/Navbar";
 import MainPage from './components/MainPage';
@@ -12,8 +13,8 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path='/' element={<MainPage />} />
-        <Route path='/countryDetails' element={<CountryDetails />} />
+        <Route path='/' element={<MainPage data={data} />} />
+        <Route path='/country/:alpha3Code' element={<CountryDetails data={data} />} />
       </Routes>
     </Router>
   );
