@@ -5,10 +5,26 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 
 const CountryDetails = ({ data }) => {
     const { alpha3Code } = useParams();
+    const [countryData, setCountryData] = useState([]);
+    const [borderingCountry, setBorderingCountry] = useState([]);
+
+    useEffect(() => {
+        const countryName = data.filter((cuontryData) => cuontryData.alpha3Code === alpha3Code);
+        countryName ? setCountryData(countryName) : (console.log('Error!!!'));
+
+        if (countryName) {
+            // const bordersCodes = countryName.borders.map((border) => { data.map((country) => country.alpha3Code === border) });
+            // setBorderingCountry(bordersCodes)
+            console.log(countryName);
+        } else {
+            console.log('Error!!!');
+        }
+
+    }, [alpha3Code]);
 
     return (
         <section className="flex flex-col dark:bg-veryDarkBlueBg bg-veryLightGrayBg px-6 sm:px-12 lg:px-20 pb-20 md:h-[91vh]">
-            {data.filter((countryData) => countryData.alpha3Code === alpha3Code).map((country) => {
+            {countryData.map((country) => {
                 return (
                     <div key={country.numericCode}>
                         <div className="flex justify-start items-center pt-10 pb-12 md:py-16 dark:bg-veryDarkBlueBg bg-veryLightGrayBg">
