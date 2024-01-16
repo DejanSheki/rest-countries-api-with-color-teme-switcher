@@ -12,15 +12,12 @@ const CountryDetails = ({ data }) => {
         const countryName = data.filter((cuontryData) => cuontryData.alpha3Code === alpha3Code);
         countryName ? setCountryData(countryName) : (console.log('Error!!!'));
 
-        if (countryName) {
-            // const bordersCodes = countryName.borders.map((border) => { data.map((country) => country.alpha3Code === border) });
-            // setBorderingCountry(bordersCodes)
-            console.log(countryName);
-        } else {
-            console.log('Error!!!');
-        }
+
+
 
     }, [alpha3Code]);
+
+
 
     return (
         <section className="flex flex-col dark:bg-veryDarkBlueBg bg-veryLightGrayBg px-6 sm:px-12 lg:px-20 pb-20 md:h-[91vh]">
