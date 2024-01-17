@@ -2,7 +2,7 @@ import React from "react";
 
 const DropdownMenu = ({ selectedRegion, handleRegionChange }) => {
   return (
-    <div className="mt-8 md:mt-0">
+    <div className="mt-8 md:mt-0 dark:shadow-[0_0_7px_rgba(17,21,23,0.8)] shadow-[0_0_7px_rgba(17,21,23,0.2)]">
       <label
         className="dark:bg-darkBlue bg-white rounded-md py-4 pr-4 dark:text-white text-veryDarkBlue"
         htmlFor="select"
