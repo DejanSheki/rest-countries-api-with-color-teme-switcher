@@ -43,7 +43,7 @@ const CountryDetails = ({ data }) => {
                                 <div className="flex flex-col md:flex-row items-start justify-between">
                                     <div>
                                         <p className="dark:text-white text-veryDarkBlue tracking-wide font-light"><strong className="font-semibold">Native Name:</strong> {country.name}</p>
-                                        <p className="dark:text-white text-veryDarkBlue tracking-wide font-light"><strong className="font-semibold">Population:</strong> {country.population}</p>
+                                        <p className="dark:text-white text-veryDarkBlue tracking-wide font-light"><strong className="font-semibold">Population:</strong> {country.population.toLocaleString()}</p>
                                         <p className="dark:text-white text-veryDarkBlue tracking-wide font-light"><strong className="font-semibold">Region:</strong> {country.region}</p>
                                         <p className="dark:text-white text-veryDarkBlue tracking-wide font-light"><strong className="font-semibold">Sub Region:</strong> {country.subregion}</p>
                                         <p className="dark:text-white text-veryDarkBlue tracking-wide font-light"><strong className="font-semibold">Capital:</strong> {country.capital}</p>

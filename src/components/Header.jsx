@@ -9,7 +9,7 @@ const Header = ({
   handleRegionChange,
 }) => {
   return (
-    <header className="flex flex-col md:flex-row justify-between items-start md:items-center  px-6 sm:px-12 lg:px-20 dark:bg-veryDarkBlueBg bg-veryLightGrayBg py-7 ">
+    <header className="flex flex-col md:flex-row justify-between items-start md:items-center  px-6 sm:px-12 lg:px-20 dark:bg-veryDarkBlueBg bg-veryLightGrayBg py-8">
       <Search onSearch={onSearch} searchValue={searchValue} />
       <DropdownMenu
         selectedRegion={selectedRegion}
