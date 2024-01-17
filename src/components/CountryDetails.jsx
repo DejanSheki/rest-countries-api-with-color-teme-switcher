@@ -6,14 +6,19 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 const CountryDetails = ({ data }) => {
     const { alpha3Code } = useParams();
     const [countryData, setCountryData] = useState([]);
-    const [borderingCountry, setBorderingCountry] = useState([]);
+    const [borderingCountry, setBorderingCountry] = useState();
 
     useEffect(() => {
         const countryName = data.filter((cuontryData) => cuontryData.alpha3Code === alpha3Code);
         countryName ? setCountryData(countryName) : (console.log('Error!!!'));
 
+        const countryNameBorders = data.find((cuontryData) => cuontryData.alpha3Code === alpha3Code).borders;
 
-
+        const borderNames = countryNameBorders ? countryNameBorders.map(name => {
+            const borders = data.find(border => border.alpha3Code === name);
+            return borders;
+        }) : console.log('No land borders!!');
+        borderNames ? setBorderingCountry(borderNames) : (console.log('Error!!!'));
 
     }, [alpha3Code]);
 
@@ -38,7 +43,7 @@ const CountryDetails = ({ data }) => {
                                 <div className="flex flex-col md:flex-row items-start justify-between">
                                     <div>
                                         <p className="dark:text-white text-veryDarkBlue tracking-wide font-light"><strong className="font-semibold">Native Name:</strong> {country.name}</p>
-                                        <p className="dark:text-white text-veryDarkBlue tracking-wide font-light"><strong className="font-semibold">Population:</strong> {country.population.toLocaleString()}</p>
+                                        <p className="dark:text-white text-veryDarkBlue tracking-wide font-light"><strong className="font-semibold">Population:</strong> {country.population}</p>
                                         <p className="dark:text-white text-veryDarkBlue tracking-wide font-light"><strong className="font-semibold">Region:</strong> {country.region}</p>
                                         <p className="dark:text-white text-veryDarkBlue tracking-wide font-light"><strong className="font-semibold">Sub Region:</strong> {country.subregion}</p>
                                         <p className="dark:text-white text-veryDarkBlue tracking-wide font-light"><strong className="font-semibold">Capital:</strong> {country.capital}</p>
@@ -70,9 +75,9 @@ const CountryDetails = ({ data }) => {
                                     <strong className="dark:text-white text-veryDarkBlue tracking-wide font-semibold">Border Cuntries:</strong>
                                     <div className="flex items-center gap-2 flex-wrap sm:ml-3">
                                         {country.borders ? (
-                                            country.borders.map((border, index) => (
-                                                <Link to={'/'} key={index} className="dark:bg-darkBlue bg-white px-6 py-1 border-none rounded-md flex items-center text-veryDarkBlue dark:text-white tracking-wide font-light dark:shadow-[0_0_7px_rgba(17,21,23,0.8)] shadow-[0_0_7px_rgba(17,21,23,0.2)]">
-                                                    {border}
+                                            borderingCountry.map((border, index) => (
+                                                <Link to={`/country/${border.alpha3Code}`} key={index} className="dark:bg-darkBlue bg-white px-6 py-1 border-none rounded-md flex items-center text-veryDarkBlue dark:text-white tracking-wide font-light dark:shadow-[0_0_7px_rgba(17,21,23,0.8)] shadow-[0_0_7px_rgba(17,21,23,0.2)]">
+                                                    {border.name}
                                                 </Link>
                                             ))
                                         ) : (
