@@ -6,7 +6,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 const CountryDetails = ({ data }) => {
     const { alpha3Code } = useParams();
     const [countryData, setCountryData] = useState([]);
-    const [borderingCountry, setBorderingCountry] = useState();
+    const [borderingCountry, setBorderingCountry] = useState([]);
 
     useEffect(() => {
         const countryName = data.filter((cuontryData) => cuontryData.alpha3Code === alpha3Code);
