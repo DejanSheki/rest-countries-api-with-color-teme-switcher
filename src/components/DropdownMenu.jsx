@@ -8,9 +8,10 @@ const DropdownMenu = ({ selectedRegion, handleRegionChange }) => {
         htmlFor="select"
       >
         <select
-          className="dark:bg-darkBlue bg-white p-4 pr-5 rounded-md dark:text-white text-veryDarkBlue"
           name="select"
           id="select"
+          aria-label="select"
+          className="dark:bg-darkBlue bg-white p-4 pr-5 rounded-md dark:text-white text-veryDarkBlue"
           value={selectedRegion}
           onChange={handleRegionChange}
         >
