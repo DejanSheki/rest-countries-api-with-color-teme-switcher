@@ -72,7 +72,7 @@ const CountryDetails = ({ data }) => {
                                     </div>
                                 </div>
                                 <div className="sm:inline-flex flex sm:flex-row flex-col sm:items-center mt-6">
-                                    <strong className="dark:text-white text-veryDarkBlue tracking-wide font-semibold">Border Cuntries:</strong>
+                                    <strong className="dark:text-white text-veryDarkBlue tracking-wide font-semibold">Border Countries:</strong>
                                     <div className="flex items-center gap-2 flex-wrap sm:ml-3">
                                         {country.borders ? (
                                             borderingCountry.map((border, index) => (
